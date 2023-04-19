@@ -71,7 +71,50 @@ if wait_data_exports.is_displayed():
 else:
     print("La página no se ha cargado completamente.")
 
-    
+
+# Download Learner overview report 
+
+driver.find_element(By.XPATH, '//*[@id="main"]/msc-organize/section/msc-organize-statistic/div/section/msc-exports/div/div[2]/div/msc-button[1]/button').click()
+
+# Wait Send Buttom:
+wait_send_buttom = wait.until(EC.presence_of_element_located((By.ID, 'cdk-overlay-26')))
+if wait_send_buttom.is_displayed():
+    # Input password:
+    driver.find_element(By.XPATH, '//*[@id="cdk-dialog-0"]/div/div[2]/div[3]/div/msc-button').click()
+else:
+    print("La página no se ha cargado completamente.")
+
+# Wait ok Buttom:
+wait_ok_buttom = wait.until(EC.presence_of_element_located((By.ID, 'cdk-overlay-27')))
+if wait_ok_buttom.is_displayed():
+    # Input password:
+    driver.find_element(By.XPATH, '//*[@id="cdk-dialog-1"]/div/div[2]/div/msc-button/button').click()
+else:
+    print("La página no se ha cargado completamente.")
+
+
+
+# Download Learner engagement report 
+
+driver.find_element(By.XPATH, '//*[@id="main"]/msc-organize/section/msc-organize-statistic/div/section/msc-exports/div/div[3]/div/msc-button[1]/button').click()
+
+# Wait Send Buttom:
+wait_send_buttom = wait.until(EC.presence_of_element_located((By.ID, 'cdk-overlay-28')))
+if wait_send_buttom.is_displayed():
+    # Input password:
+    driver.find_element(By.XPATH, '//*[@id="cdk-dialog-2"]/div/div[2]/div[3]/div/msc-button/button').click()
+else:
+    print("La página no se ha cargado completamente.")
+
+# Wait ok Buttom:
+wait_ok_buttom = wait.until(EC.presence_of_element_located((By.ID, 'cdk-overlay-30')))
+if wait_ok_buttom.is_displayed():
+    # Input password:
+    driver.find_element(By.XPATH, '//*[@id="cdk-dialog-3"]/div/div[2]/div/msc-button/button').click()
+else:
+    print("La página no se ha cargado completamente.")
+
+
 
 time.sleep(10)
 # Cerrar el driver de Selenium
